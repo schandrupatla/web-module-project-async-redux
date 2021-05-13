@@ -1,9 +1,9 @@
 import {FETCH_FAIL, FETCH_SUCCESS, FETCH_START}from '../actions/index'
 const initialState ={
-    dog:{
+     dog:{
         // breed:"Lab-Retriever",
-        image:"https://images.dog.ceo/breeds/hound-afghan/n02088094_1128.jpg"
-    },
+        image:"https://images.dog.ceo/breeds/hound-afghan/n02088094_1128.jpg",
+      },
     isFetching:false,
     error:""
 };
@@ -14,7 +14,7 @@ export const reducer = (state = initialState, action)=>{
 
         case FETCH_SUCCESS:
             return({...state, 
-                dog:action.payload, 
+                dog:{...state.dog, image: action.payload},
                 idFetching:false})
 
         case FETCH_FAIL:

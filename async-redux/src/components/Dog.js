@@ -1,21 +1,25 @@
 import React from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { connect } from 'react-redux'
-import {fetchStart, fetchSuccess, fetchFail} from '../actions'
+import {fetchStart, fetchSuccess, fetchFail, fetchDog} from '../actions'
 
 const Dog =(props)=>{
+    console.log(props.image);
 
     const handleGet=()=>{ 
-        // props.fetchStart();
-        axios
-        .get('https://dog.ceo/api/breeds/image/random')
-        .then(resp=> {
-            console.log(resp.data.message)
-             props.fetchSuccess(resp.data.message)
-          })
-          .catch(err=>{
-            props.fetchFail(err);
-          })
+        props.fetchDog();
+
+        //############code to work without THUNK##############
+        //  //props.fetchStart();
+        // axios
+        // .get('https://dog.ceo/api/breeds/image/random')
+        // .then(resp=> {
+        //      console.log(resp)
+        //      props.fetchSuccess(resp.data.message)
+        //   })
+        //   .catch(err=>{
+        //     props.fetchFail(err);
+        //   })
     }
 
     return (
@@ -35,4 +39,4 @@ const mapStateToProps = state =>{
         error:state.error
     }
 }
-export default connect(mapStateToProps, {fetchStart, fetchSuccess, fetchFail})(Dog);
+export default connect(mapStateToProps, {fetchDog, fetchStart, fetchSuccess, fetchFail})(Dog);
