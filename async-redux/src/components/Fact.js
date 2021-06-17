@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { connect } from "react-redux";
-import { fetchStart, fetchSuccess, fetchFail, fetchFact } from "../actions";
-
+// import { fetchStart, fetchSuccess, fetchFail, fetchFact } from "../actions";
+import { fetchFact } from "../actions";
 
 let img =
   "https://images.unsplash.com/photo-1444464666168-49d633b86797?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fG5hdHVyZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
